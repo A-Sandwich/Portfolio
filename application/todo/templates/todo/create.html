@@ -1,0 +1,7 @@
+<h1>Create a task!</h1>
+
+<form action="{% url 'todo:save' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="title">
+    <input type="submit" value="Save">
+</form>
