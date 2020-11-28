@@ -13,4 +13,6 @@ def create(request):
 
 def save(request):
     print(request.POST['title'])
-    return HttpResponseRedirect(reverse('todo:create'))
+    task = Task(title=request.POST['title'])
+    task.save()
+    return HttpResponseRedirect(reverse('todo:index'))
